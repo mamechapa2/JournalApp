@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { JournalApp } from './JournalApp';
+import './styles/styles.scss';
+import { AppRouter } from './routers/AppRouter';
 
 ReactDOM.render(
-  <JournalApp />,
+  <AppRouter />,
   document.getElementById('root')
 );
