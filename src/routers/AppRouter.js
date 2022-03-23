@@ -1,12 +1,13 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import { Routes, Route, BrowserRouter} from "react-router-dom";
 import { login } from '../actions/auth';
 import { JournalScreen } from '../components/journal/JournalScreen';
 import { AuthRouter } from './AuthRouter';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { startLoadingNotes } from '../actions/notes';
 
 export const AppRouter = () => {
 
@@ -17,10 +18,13 @@ export const AppRouter = () => {
 
     useEffect(() => {
         const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if(user?.uid) {
                 dispatch(login(user.uid, user.displayName)); 
+                
                 setIsLoggedIn(true);
+
+                dispatch(startLoadingNotes(user.uid));
             }else{
                 setIsLoggedIn(false);
             }
@@ -31,7 +35,7 @@ export const AppRouter = () => {
     
     if(checking){
         return (
-            <h1>Espere...</h1>
+            <h1>Wait...</h1>
         )
     }
     return (
