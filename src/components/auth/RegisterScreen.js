@@ -12,10 +12,10 @@ export const RegisterScreen = () => {
     const {msgError} = useSelector(state => state.ui);
     
     const [formValues, handleInputChange] = useForm({
-        name: 'Alfonso',
-        email: 'alfonsoarroyoloaisa@gmail.com',
-        password: '123456',
-        password2: '123456'
+        name: '',
+        email: '',
+        password: '',
+        password2: ''
     })
 
     const handleRegister = (e) => {
@@ -45,7 +45,10 @@ export const RegisterScreen = () => {
         <>
             <h3 className='auth__title'>Register</h3>
 
-            <form onSubmit={handleRegister}>
+            <form 
+                onSubmit={handleRegister}
+                className='animate__animated animate__fadeIn animate__faster'
+            >
                 
                 {
                     msgError &&
@@ -76,6 +79,7 @@ export const RegisterScreen = () => {
                     placeholder='Password'
                     name='password'
                     className='auth__input'
+                    autoComplete='new-password'
                     value={formValues.password}
                     onChange={handleInputChange}
                 /> 
@@ -84,6 +88,7 @@ export const RegisterScreen = () => {
                     placeholder='Confirm Password'
                     name='password2'
                     className='auth__input'
+                    autoComplete='new-password'
                     value={formValues.password2}
                     onChange={handleInputChange}
                 />
