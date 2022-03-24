@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mamechapa2/JournalApp/static/css/main.98b3f70b.css",
-    "main.js": "/mamechapa2/JournalApp/static/js/main.2f9b7a21.js",
+    "main.js": "/mamechapa2/JournalApp/static/js/main.ac0d4324.js",
     "index.html": "/mamechapa2/JournalApp/index.html",
     "main.98b3f70b.css.map": "/mamechapa2/JournalApp/static/css/main.98b3f70b.css.map",
-    "main.2f9b7a21.js.map": "/mamechapa2/JournalApp/static/js/main.2f9b7a21.js.map"
+    "main.ac0d4324.js.map": "/mamechapa2/JournalApp/static/js/main.ac0d4324.js.map"
   },
   "entrypoints": [
     "static/css/main.98b3f70b.css",
-    "static/js/main.2f9b7a21.js"
+    "static/js/main.ac0d4324.js"
   ]
 }
