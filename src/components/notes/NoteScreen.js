@@ -33,7 +33,7 @@ export const NoteScreen = () => {
     
     
     return (
-        <div className='notes__main-content'>
+        <div className='notes__main-content animate__animated animate__backInRight animate__faster'>
             <NotesAppBar />
             <div className='notes__content'>
                 <input
